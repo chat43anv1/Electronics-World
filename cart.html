@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Tu Carrito</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="contact.html">Contacto</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </header>
+
+    <!-- Cart Items -->
+    <section class="cart-container">
+        <h2>Productos en tu carrito</h2>
+        <ul id="cart-items">
+            <!-- Aquí se agregarán los productos del carrito -->
+        </ul>
+        <div class="cart-total">
+            Total: <span id="cart-total">$0</span>
+        </div>
+
+        <!-- Discount Code Section -->
+        <section class="discount-section">
+            <h3>¿Tienes un código de descuento?</h3>
+            <input type="text" id="discount-code" placeholder="Introduce tu código">
+            <button onclick="applyDiscount()">Aplicar</button>
+        </section>
+
+        <div class="cart-buttons">
+            <button onclick="completePurchase()">Completar Compra</button>
+            <button onclick="clearCart()">Vaciar Carrito</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Electronics World. Todos los derechos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

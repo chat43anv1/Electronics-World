@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías - Tienda en Línea</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Tienda en Línea</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="category.html">Categorías</a></li>
+                <li><a href="cart.html">Carrito</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar productos...">
+            <button onclick="searchProducts()">Buscar</button>
+        </div>
+    </header>
+
+    <!-- Banner de Categorías -->
+    <section id="banner">
+        <h2>Categorías de Productos</h2>
+        <p>Explora nuestra amplia selección de productos</p>
+    </section>
+
+    <!-- Filtros y Clasificación -->
+    <section id="filters">
+        <h2>Filtros de Búsqueda</h2>
+        <div class="filter-options">
+            <div class="price-filter">
+                <label for="price-range">Rango de precios:</label>
+                <input type="range" id="price-range" min="0" max="10000" step="100" oninput="updatePriceDisplay()">
+                <span id="price-display">Hasta $5000</span>
+            </div>
+            <div class="sort-options">
+                <label for="sort-by">Ordenar por:</label>
+                <select id="sort-by" onchange="sortProducts()">
+                    <option value="popularity">Popularidad</option>
+                    <option value="price-asc">Precio: Menor a Mayor</option>
+                    <option value="price-desc">Precio: Mayor a Menor</option>
+                    <option value="newest">Novedades</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Categorías -->
+    <section id="categories">
+        <h2>Nuestras Categorías</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <a href="laptops.html">
+                    <img src="img/laptops.png" alt="Laptops">
+                    <h3>Laptops</h3>
+                </a>
+            </div>
+            <div class="category-card">
+                <a href="celulares.html">
+                    <img src="img/celulares.png" alt="Celulares">
+                    <h3>Celulares</h3>
+                </a>
+            </div>
+            <div class="category-card">
+                <a href="tablets.html">
+                    <img src="img/tablets.png" alt="Tablets">
+                    <h3>Tablets</h3>
+                </a>
+            </div>
+            <div class="category-card">
+                <a href="accesorios.html">
+                    <img src="img/accessories.png" alt="Accesorios">
+                    <h3>Accesorios</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos populares -->
+    <section id="popular-products">
+        <h2>Productos Populares</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="img/celular.png" alt="Celular X1000">
+                <h3>Celular X1000</h3>
+                <p>$3000</p>
+                <button onclick="addToCart('Celular X1000', 3000)">Añadir al Carrito</button>
+            </div>
+            <div class="product">
+                <img src="img/tablet.png" alt="Tablet T2000">
+                <h3>Tablet T2000</h3>
+                <p>$4000</p>
+                <button onclick="addToCart('Tablet T2000', 4000)">Añadir al Carrito</button>
+            </div>
+            <div class="product">
+                <img src="img/lap.png" alt="Laptop L500">
+                <h3>Laptop L500</h3>
+                <p>$8000</p>
+                <button onclick="addToCart('Laptop L500', 8000)">Añadir al Carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios de Clientes -->
+    <section id="testimonials">
+        <h2>Opiniones de Nuestros Clientes</h2>
+        <div class="testimonial">
+            <p>"Excelente calidad y servicio al cliente. Mi nueva laptop llegó en perfecto estado y en tiempo récord."</p>
+            <cite>- Carlos S.</cite>
+        </div>
+        <div class="testimonial">
+            <p>"La variedad de productos es impresionante. Encontré exactamente lo que buscaba a un precio justo."</p>
+            <cite>- Maria R.</cite>
+        </div>
+        <div class="testimonial">
+            <p>"Recomiendo esta tienda al 100%. Muy confiable y productos originales."</p>
+            <cite>- Ana L.</cite>
+        </div>
+    </section>
+
+    <!-- Footer con Suscripción -->
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Acerca de Nosotros</h3>
+                <p>Somos una tienda en línea comprometida con ofrecer los mejores productos electrónicos del mercado.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="category.html">Categorías</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Síguenos</h3>
+                <ul class="social-links">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Suscríbete a nuestro boletín</h3>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Ingresa tu correo" required>
+                    <button type="submit">Suscribirme</button>
+                </form>
+            </div>
+        </div>
+        <p>&copy; 2023 Tienda en Línea. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
